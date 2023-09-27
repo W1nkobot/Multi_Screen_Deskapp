@@ -12,7 +12,7 @@ KV = '''
         MDList:
 
             OneLineListItem:
-                text: "Screen 1"
+                text: "Registration"
                 on_press:
                     root.nav_drawer.set_state("close")
                     root.screen_manager.current = "scr 1"
@@ -29,7 +29,7 @@ Screen:
     MDTopAppBar:
         id: toolbar
         pos_hint: {"top": 1}
-        elevation: 10
+        elevation: 5
         title: "MDNavigationDrawer"
         left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
 
@@ -43,7 +43,7 @@ Screen:
                 name: "scr 1"
 
                 MDLabel:
-                    text: "Screen 1"
+                    text: "Регистрируйся! Надо!"
                     halign: "center"
 
             Screen:
