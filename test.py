@@ -1,7 +1,7 @@
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
-
+from kivy.config import Config
 from kivymd.app import MDApp
 
 KV = '''
@@ -10,7 +10,9 @@ KV = '''
     ScrollView:
 
         MDList:
-
+            OneLineIconListItem:            
+                IconLeftWidget:
+                    icon: "/home/student/Desktop/Wank/Stock images/shopicon.jpg" 
             OneLineListItem:
                 text: "Log In"
                 on_press:
@@ -67,17 +69,17 @@ Screen:
                 nav_drawer: nav_drawer
 '''
 
+Config.set('kivy', 'window_icon', '/home/student/Desktop/Wank/Stock images/shopicon.jpg')
 
 class ContentNavigationDrawer(BoxLayout):
     screen_manager = ObjectProperty()
     nav_drawer = ObjectProperty()
 
 
-class TestNavigationDrawer(MDApp):
+class GroceryStore(MDApp):
     def build(self):
         self.theme_cls.primary_palette = 'Gray'
-
         return Builder.load_string(KV)
 
 
-TestNavigationDrawer().run()
+GroceryStore().run()
