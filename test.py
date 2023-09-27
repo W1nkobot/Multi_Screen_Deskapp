@@ -12,7 +12,7 @@ KV = '''
         MDList:
 
             OneLineListItem:
-                text: "Registration"
+                text: "Log In"
                 on_press:
                     root.nav_drawer.set_state("close")
                     root.screen_manager.current = "scr 1"
@@ -30,7 +30,7 @@ Screen:
         id: toolbar
         pos_hint: {"top": 1}
         elevation: 5
-        title: "MDNavigationDrawer"
+        title: 'Best Shop In The "HelloWorld"'
         left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
 
     MDNavigationLayout:
@@ -43,14 +43,20 @@ Screen:
                 name: "scr 1"
 
                 MDLabel:
-                    text: "Регистрируйся! Надо!"
-                    halign: "center"
-
+                    text: "Тут лента классных новостей"
+                    halign: "center"            
             Screen:
                 name: "scr 2"
 
                 MDLabel:
-                    text: "Screen 2"
+                    text: "Логинься! Надо!"
+                    halign: "center"
+
+            Screen:
+                name: "scr 3"
+
+                MDLabel:
+                    text: "Тут твои штуки для покупки"
                     halign: "center"
 
         MDNavigationDrawer:
@@ -69,6 +75,8 @@ class ContentNavigationDrawer(BoxLayout):
 
 class TestNavigationDrawer(MDApp):
     def build(self):
+        self.theme_cls.primary_palette = 'Gray'
+
         return Builder.load_string(KV)
 
 
